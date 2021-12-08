@@ -2,34 +2,53 @@
 import React from 'react'; 
 import ReactDom from 'react-dom';
 
-// stateless functional component
-// always return JSX
-// Every component must begin with a capital letter so react knows that the function is a component.
-function Greeting ()
-{
+// CSS
+import './index.css';
+
+
+
+
+function BookList () {
   return (
-    <div> 
-      < Person />
-      < Message />
-      <h1>
-
-      </h1>
-    </div>
+    <section className="bookList"> 
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+      < Book/>
+    </section>
   );
-  // Not HTML but JSX? What is JSX?
 }
 
-const Person = () => {
-  return <h2> John Doe </h2>
-}
-const Message = () => <h2> John Doe </h2> 
+const Book = () => {
+  return (
+    <article className='book'> 
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  )
+};
 
+const Image = () => (<img src="https://images-na.ssl-images-amazon.com/images/I/911cmGSgcvL._AC_UL254_SR254,254_.jpg" alt=""/>);
 
-// const Greeting = () => {
-//   return React.createElement('h1', {}, 'hello edache')
-// }
+const Title = () => (
+  <h1> Will </h1>
+);
 
-// Renders the component to the html file, in the root section so it can be displayed 
-// The render method looks for two things (what to render, where to render);
-// What to render must have self closing tag
-ReactDom.render(<Greeting />, document.getElementById('root'));
+// Double curly braces to leave the js world to css
+const Author = () => (<h4 style={{ color: '#617d98', fontSize: '0.75rem', marginTop: '0.25rem'}}> Unabriged </h4>)
+
+ReactDom.render(<BookList />, document.getElementById('root'));
