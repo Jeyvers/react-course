@@ -1,0 +1,21 @@
+What is React?
+Reat is a JavaScript library for building interfaces.
+Has at least one component (root component).
+Uses Virtual DOM, increases speed for better user interface.
+There'll always be something new to learn. The best way to learn a language is to build something with it.
+
+Requirements: HTML, CSS & JavaScript
+Coding Addict - Javascript Nuggets
+
+TERMINAL:
+PWD - Full pathname to current working directory.
+LS - List of Directories
+ls -a - hidden folders
+MKDIR - Create a Directory/Folder
+CD foldername - Change a directory
+cd .. - navigate to parent / one level up
+Clear - clear console
+Arrow key up/down - previous commands
+//went through npm basics
+
+run npm install if cloned or forked from github as node modules will be exempted.

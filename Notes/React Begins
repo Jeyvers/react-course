@@ -1,0 +1,19 @@
+What is JSX?
+
+JSX Rules
+- return single element
+// can be enclosed in a <React.fragment> </React.fragment> or <> </>
+
+- div / section / article or Fragment(follow HTML semantics)
+
+- use camelCase for html attributes
+
+- className instead of class (because in ES6, class is already a keyword).
+
+- every element must have a closing tag (even elements that are supported without closing tags e.g (img, input))
+
+- formatting
+
+
+//
+Nested Components, React Tools

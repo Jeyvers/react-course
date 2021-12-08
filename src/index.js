@@ -1,17 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// Importing dependencies
+import React from 'react'; 
+import ReactDom from 'react-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// stateless functional component
+// always return JSX
+// Every component must begin with a capital letter so react knows that the function is a component.
+function Greeting ()
+{
+  return (
+    <div> 
+      < Person />
+      < Message />
+      <h1>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      </h1>
+    </div>
+  );
+  // Not HTML but JSX? What is JSX?
+}
+
+const Person = () => {
+  return <h2> John Doe </h2>
+}
+const Message = () => <h2> John Doe </h2> 
+
+
+// const Greeting = () => {
+//   return React.createElement('h1', {}, 'hello edache')
+// }
+
+// Renders the component to the html file, in the root section so it can be displayed 
+// The render method looks for two things (what to render, where to render);
+// What to render must have self closing tag
+ReactDom.render(<Greeting />, document.getElementById('root'));
