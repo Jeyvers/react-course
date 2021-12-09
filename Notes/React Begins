@@ -13,7 +13,7 @@ JSX Rules
 - every element must have a closing tag (even elements that are supported without closing tags e.g (img, input))
 
 - formatting
-
+// Inline css has a higher specifity than the external css. Note this when using libraries. 
 
 //
 Nested Components, React Tools

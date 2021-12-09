@@ -4,51 +4,39 @@ import ReactDom from 'react-dom';
 
 // CSS
 import './index.css';
+const firstBook = {
+  author: "Unabriged",
+  img: "https://images-na.ssl-images-amazon.com/images/I/911cmGSgcvL._AC_UL254_SR254,254_.jpg",
+  title: "Will"
+}
 
-
-
+const author = 'Unabriged';
+const title = 'Will';
+const img = "https://images-na.ssl-images-amazon.com/images/I/911cmGSgcvL._AC_UL254_SR254,254_.jpg";
 
 function BookList () {
   return (
     <section className="bookList"> 
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
-      < Book/>
+      < Book 
+      img={firstBook.img}
+      title={firstBook.title}
+      author={firstBook.author}
+      />
+ 
     </section>
   );
 }
 
-const Book = () => {
+const Book = (props) => {
+  console.log(props);
   return (
     <article className='book'> 
-      <Image />
-      <Title />
-      <Author />
+      <img src={img} alt="" />
+      <h1>{title}</h1>
+      <h4> {author}</h4>
     </article>
-  )
+  );
 };
 
-const Image = () => (<img src="https://images-na.ssl-images-amazon.com/images/I/911cmGSgcvL._AC_UL254_SR254,254_.jpg" alt=""/>);
-
-const Title = () => (
-  <h1> Will </h1>
-);
-
-// Double curly braces to leave the js world to css
-const Author = () => (<h4 style={{ color: '#617d98', fontSize: '0.75rem', marginTop: '0.25rem'}}> Unabriged </h4>)
 
 ReactDom.render(<BookList />, document.getElementById('root'));
