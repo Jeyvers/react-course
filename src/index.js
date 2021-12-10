@@ -15,25 +15,32 @@ const title = 'Will';
 const img = "https://images-na.ssl-images-amazon.com/images/I/911cmGSgcvL._AC_UL254_SR254,254_.jpg";
 
 function BookList () {
-  return (
+  return ( 
     <section className="bookList"> 
+  {/* This method shows repitition */}
       < Book 
       img={firstBook.img}
       title={firstBook.title}
       author={firstBook.author}
-      />
+      >
+        {/* children */}
+      <p>lorem20</p>
+      </Book>
+
  
     </section>
   );
 }
 
-const Book = ({img, title, author}) => {
+// children name is special
+const Book = ({img, title, author, children}) => {
   // const {img, title, author} = props;
   return (
     <article className='book'> 
       <img src={img} alt="" />
       <h1>{title}</h1>
       <h4> {author}</h4>
+      {children}
     </article>
   );
 };
