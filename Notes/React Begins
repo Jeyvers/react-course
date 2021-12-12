@@ -1,8 +1,9 @@
 What is JSX?
 
 JSX Rules
+
 - return single element
-// can be enclosed in a <React.fragment> </React.fragment> or <> </>
+  // can be enclosed in a <React.fragment> </React.fragment> or <> </>
 
 - div / section / article or Fragment(follow HTML semantics)
 
@@ -13,9 +14,23 @@ JSX Rules
 - every element must have a closing tag (even elements that are supported without closing tags e.g (img, input))
 
 - formatting
-// Inline css has a higher specifity than the external css. Note this when using libraries. 
+  // Inline css has a higher specifity than the external css. Note this when using libraries.
 
 //
 Nested Components, React Tools
 
 // Get all react events at react events synthetic
+
+// Deploying
+npm run build, drag and drop build folder to netlify hosting area.
+
+-ADVANCED REACT (hooks).
+useState
+useEffect
+Conditional Rendering
+Forms
+useRef
+useReducer
+Prop Drilling
+Context API / useContext
+React ROuter

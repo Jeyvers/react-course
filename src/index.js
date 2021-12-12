@@ -7,10 +7,12 @@ import './index.css';
 
 // JS Files
 // Don't need js extensions 
-import {books} from './books';
-import {Book} from './Book' 
+import books from './books';
+import Book from './Book' ;
+import {greeting} from '../testing/testing'
 
 function BookList () {
+  console.log(greeting)
   return ( 
     <section className="bookList"> 
     {books.map((book) => {
@@ -21,8 +23,5 @@ function BookList () {
     </section>
   );
 }  
-
-
-
 
 ReactDom.render(<BookList />, document.getElementById('root'));
