@@ -34,3 +34,9 @@ useReducer
 Prop Drilling
 Context API / useContext
 React ROuter
+
+<!-- Conditions -->
+Must begin with use 
+component name must use PascalCase naming convention
+Must be in the function/component body
+Cannot call conditionally 
