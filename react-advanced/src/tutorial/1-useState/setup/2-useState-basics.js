@@ -6,7 +6,7 @@ const UseStateBasics = () => {
   // const value = useState(1)[0];
   // const handler = useState(1)[1];
   // console.log(value, handler);
-  // useState handles a value and a function handler
+  // useState handles a value and a function handler which works with the value 
 
   // common naming convention is to add set and the variable name as your function name
   const [text, setText] = useState('random title');

@@ -21,6 +21,11 @@ Nested Components, React Tools
 
 // Get all react events at react events synthetic
 
+<!-- PROPS -->
+
+Whatever you pass in the object is the props.
+What ever you pass in the function rendering e.g <Book job='developer'/> goes as a value in the props
+
 // Deploying
 npm run build, drag and drop build folder to netlify hosting area.
 
@@ -36,7 +41,8 @@ Context API / useContext
 React ROuter
 
 <!-- Conditions -->
-Must begin with use 
+
+Must begin with use
 component name must use PascalCase naming convention
 Must be in the function/component body
-Cannot call conditionally 
+Cannot call conditionally
