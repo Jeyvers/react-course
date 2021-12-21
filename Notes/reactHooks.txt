@@ -1,0 +1,19 @@
+ Conditions
+React Hooks Rules
+Must begin with use
+component name must use PascalCase naming convention
+Must be in the function/component body
+Cannot call conditionally
+
+useState preserves the value and triggers rerendering?????!
+
+USEEFFECT
+useEffect is used for operations outside of the component. Beware when using useEffect and useState together. if you're passing in a value in useState that will cause the browser to rerender, and pass in the useState again, it'll lead to an infinite loop. 
+// by default runs after every re-render
+
+// second parameter
+-array in useEffect second parameter is called the array of dependencies
+if left blank, useEffect will only run on intial rendering 
+
+
+// cleanup function
