@@ -1,4 +1,4 @@
- Conditions
+CONDITIONS OF REACT HOOKS
 React Hooks Rules
 Must begin with use
 component name must use PascalCase naming convention
@@ -17,3 +17,18 @@ if left blank, useEffect will only run on intial rendering
 
 
 // cleanup function
+
+CONDITIONAL RENDERING
+--Short Circuits
+Reacts does not allow if conditions within the jsx, so short circuits  and ternary operator will be mostly used.  
+Eg:
+text = '';
+1. const firstValue = text || 'hello world';
+2. const secondValue = text && 'hello world';
+
+  1. if text is falsy (which it is because it's an empty string), evaluation moves to the next value. :: firstValue equals hello world. If text is truthy, the second evaluation will be skipped.
+
+  2. if text is truthy, js evaluates the second value. if text is falsy, js evaluates the first value (text)
+
+CONTROLLED INPUTS
+The act of hooking up your inputs to a useState value. 
