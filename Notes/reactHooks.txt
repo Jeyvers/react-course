@@ -32,3 +32,6 @@ text = '';
 
 CONTROLLED INPUTS
 The act of hooking up your inputs to a useState value. 
+
+USEREDUCER
+takes two parameters, state and dispatch. State value, dispatch function.
