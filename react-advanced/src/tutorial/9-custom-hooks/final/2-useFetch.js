@@ -10,9 +10,11 @@ export const useFetch = (url) => {
     setProducts(products);
     setLoading(false);
   }, [url]);
+  // recreate from scratch when url changes
 
   useEffect(() => {
     getProducts();
   }, [url, getProducts]);
+  // If getProducts is added without the useCallback, an infinite loop will be created
   return { loading, products };
 };
