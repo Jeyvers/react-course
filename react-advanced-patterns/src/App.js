@@ -1,29 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
+
+function reducer({ state }) {
+  switch (state) {
+    case 'PRESSED_ONCE':
+      return { state: 'PRESSED_TWO' };
+    case 'PRESSED_TWO':
+      return { state: 'PRESSED_THREE' };
+    case 'PRESSED_THREE':
+      return { state: 'PRESSED_ONCE' };
+    default:
+      return { state: 'PRESSED_ONCE' };
+  }
+}
 
 const Button = (props) => {
   const [counter, setCounter] = useState(0);
+  const [state, dispatch] = useReducer(reducer, {
+    state: 'PRESSED_ONCE',
+  });
   return (
-    <div
-      style={{ margin: '2rem auto' }}
-      onClick={() => setCounter((c) => c + props.increment)}
-    >
-      I am a button.
-      <div>
-        <button
-          style={{
-            margin: '1rem auto',
-            background: 'none',
-            color: props.color,
-            padding: '0.75rem 2rem',
-            borderRadius: '.5rem',
-            textDecoration: props.underline ? 'underline' : undefined,
-            fontSize: '1.5rem',
-          }}
-        >
-          Count {counter}
-        </button>
+    <div style={{ margin: '2rem auto' }}>
+      <div onClick={() => dispatch()}>
+        {' '}
+        I am a button.
+        <div>{state.state}</div>
       </div>
     </div>
   );
@@ -34,16 +36,6 @@ function App() {
     increment: 2,
     underline: true,
   };
-
-  // const obj = {
-  //   x: 1,
-  // };
-  // const obj2 = {
-  //   x: 2,
-  //   ...obj,
-  // };
-
-  // obj2.x === 1
 
   return (
     <div className='App'>
