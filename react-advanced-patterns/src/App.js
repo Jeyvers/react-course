@@ -1,67 +1,48 @@
+import React, { useState, useReducer, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { useState, useReducer, useEffect } from 'react';
 
-function reducer({ state }) {
-  switch (state) {
-    case 'PRESSED_ONCE':
-      return { state: 'PRESSED_TWO' };
-    case 'PRESSED_TWO':
-      return { state: 'PRESSED_THREE' };
-    case 'PRESSED_THREE':
-      return { state: 'PRESSED_ONCE' };
-    default:
-      return { state: 'PRESSED_ONCE' };
-  }
-}
+const Checkbox = ({ children }) => {
+  const [checked, setChecked] = useState(true);
 
-const Button = (props) => {
-  const [counter, setCounter] = useState(0);
-  const [state, dispatch] = useReducer(reducer, {
-    state: 'PRESSED_ONCE',
+  const allChildren = React.Children.map(children, (child) => {
+    const clone = React.cloneElement(child, {
+      checked,
+      setChecked,
+    });
+    console.log(child);
+    return clone;
   });
+
+  return allChildren;
+};
+
+const CheckboxInput = ({ checked, setChecked }) => {
   return (
-    <div style={{ margin: '2rem auto' }}>
-      <div onClick={() => dispatch()}>
-        {' '}
-        I am a button.
-        <div>{state.state}</div>
-      </div>
-    </div>
+    <input
+      type='checkbox'
+      checked={checked}
+      onChange={(e) => {
+        setChecked(e.target.checked);
+      }}
+    />
+  );
+};
+const Label = ({ setChecked, children }) => {
+  return (
+    <label onClick={() => setChecked((state) => !state)}>{children}</label>
   );
 };
 
-// *
-// *idle
-// *loading
-// *loaded
-// *error
-
 function App() {
-  const [state, setState] = useState('idle');
-  function clicked() {
-    setState('loading');
-    fetch('/data.json')
-      .then(() => {
-        setState('loaded');
-      })
-      .catch((err) => {
-        setState('error');
-      });
-  }
-
-  if (state === 'loading') {
-    return <div> Loading...</div>;
-  }
-
-  if (state === 'error') {
-    return <div> Error fetching your request</div>;
-  }
-
   return (
-    <div className='App' onClick={clicked}>
-      Current State: {state}
-    </div>
+    <>
+      <h1>Compound Components in React</h1>
+      <Checkbox>
+        <CheckboxInput />
+        <Label>Check box label</Label>
+      </Checkbox>
+    </>
   );
 }
 
