@@ -2,6 +2,7 @@ import React, { useState, useReducer, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// * DOM elements, classes, functions, null
 const Checkbox = ({ children }) => {
   const [checked, setChecked] = useState(true);
 
@@ -10,7 +11,14 @@ const Checkbox = ({ children }) => {
       checked,
       setChecked,
     });
-    console.log(child);
+    if (typeof child.type !== 'function') {
+      // this is not our element to be messed around
+      return child;
+
+      // Or throw new Error(`${child.type} DOM element is not allowed inside <Checkbox /> component`)
+
+      // Or return null
+    }
     return clone;
   });
 
@@ -40,6 +48,7 @@ function App() {
       <h1>Compound Components in React</h1>
       <Checkbox>
         <CheckboxInput />
+        <br />
         <Label>Check box label</Label>
       </Checkbox>
     </>
