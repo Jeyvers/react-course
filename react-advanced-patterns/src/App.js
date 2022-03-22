@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState, useReducer } from 'react';
+import { useState, useReducer, useEffect } from 'react';
 
 function reducer({ state }) {
   switch (state) {
@@ -31,17 +31,36 @@ const Button = (props) => {
   );
 };
 
+// *
+// *idle
+// *loading
+// *loaded
+// *error
+
 function App() {
-  const props = {
-    increment: 2,
-    underline: true,
-  };
+  const [state, setState] = useState('idle');
+  function clicked() {
+    setState('loading');
+    fetch('/data.json')
+      .then(() => {
+        setState('loaded');
+      })
+      .catch((err) => {
+        setState('error');
+      });
+  }
+
+  if (state === 'loading') {
+    return <div> Loading...</div>;
+  }
+
+  if (state === 'error') {
+    return <div> Error fetching your request</div>;
+  }
 
   return (
-    <div className='App'>
-      <Button {...props} color='black' />
-      <Button {...props} color='blue' />
-      <Button {...props} color='green' />
+    <div className='App' onClick={clicked}>
+      Current State: {state}
     </div>
   );
 }
