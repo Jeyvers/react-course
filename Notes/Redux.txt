@@ -1,0 +1,37 @@
+What is Redux?
+Redux is a state management tool. 
+
+Benefits 
+- Predictable state changes
+- Centralized state
+- Easy debugging
+preserve page state undo/redo
+- Ecosystem of add-ons
+- Is immutable
+- State can be accessed anywhere in your applications
+- Fast and reliable
+- Popular
+
+Disadvantages
+- Complexity 
+- Verbosity
+
+What problem are you solving?
+- When not to use redux:
+    - Tight budget
+    - Small to medium-size apps
+    - Simple UI/data flow
+    - static data
+
+
+Course Structure 
+- Functional programming
+- Fundamentals of Redux
+- Build Redux from scratch
+- Debugging Redux applications
+- Writing clean code
+- Designing a redux store
+- Middleware
+- Calling APIs
+- Testing Redux apps
+- Integration with React
