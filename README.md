@@ -14,7 +14,6 @@ Next in line to learn:
 - Firebase
 - NextJs
 - GraphicQL
-- React Native
 - Data Structures & Algorithms
 - Create a blog, a restaurant delivery website & an e-commerce website
 
